@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale/en_US/locale.xml
+  *
+  * Copyright (c) 2013-2018 Simon Fraser University
+  * Copyright (c) 2003-2018 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Javascript plugin localization strings
+  -->
+
+<locale name="en_US" full_name="U.S. English">
+	<message key="plugins.generic.customHeader.displayName">Custom Header Plugin</message>
+	<message key="plugins.generic.customHeader.description">Add arbitrary headers to the website.</message>
+	<message key="plugins.generic.customHeader.manager.settings.description">With this plugin enabled custom headers can be added to the website. This can be used, for example, to add custom Javascript.</message>
+	<message key="plugins.generic.customHeader.content">Header Content</message>
+</locale>
