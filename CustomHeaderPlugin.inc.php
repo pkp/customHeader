@@ -86,7 +86,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
 
 				$this->import('CustomHeaderSettingsForm');
-				$form = new CustomHeaderSettingsForm($this, $context->getId());
+				$form = new CustomHeaderSettingsForm($this, $context?$context->getId():CONTEXT_ID_NONE);
 
 				if ($request->getUserVar('save')) {
 					$form->readInputData();
@@ -124,5 +124,18 @@ class CustomHeaderPlugin extends GenericPlugin {
 			$templateMgr->addHeader('custom', $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'content'));
 		}
 		return false;
+	}
+
+	/**
+	 * This plugin can be used site-wide or in a specific context. The
+	 * isSitePlugin check is used to grant access to different users, so this
+	 * plugin must return true only if the user is currently in the site-wide
+	 * context.
+	 *
+	 * @see PluginGridRow::_canEdit()
+	 * @return boolean
+	 */
+	function isSitePlugin() {
+		return !Application::getRequest()->getContext();
 	}
 }
