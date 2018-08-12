@@ -11,7 +11,7 @@
   * Javascript plugin localization strings
   -->
 
-<locale name="es_ES" full_name="Español-España">
+<locale name="es_ES" full_name="Español (España)">
 	<message key="plugins.generic.customHeader.displayName">Complemento Encabezado personalizado</message>
 	<message key="plugins.generic.customHeader.description">Agregue encabezados arbitrarios a su sitio.</message>
 	<message key="plugins.generic.customHeader.manager.settings.description">Con este complemento habilitado se pueden agregar encabezados personalizados a su sitio de internet. Puede ser utilizado, por ejemplo, para agregar código Javascript personalizado.</message>
