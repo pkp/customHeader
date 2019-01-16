@@ -16,4 +16,5 @@
 	<message key="plugins.generic.customHeader.description">Add arbitrary headers to the website.</message>
 	<message key="plugins.generic.customHeader.manager.settings.description">With this plugin enabled custom headers can be added to the website. This can be used, for example, to add custom Javascript.</message>
 	<message key="plugins.generic.customHeader.content">Header Content</message>
+	<message key="plugins.generic.customHeader.footerContent">Footer Content</message>
 </locale>

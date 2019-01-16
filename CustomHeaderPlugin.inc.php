@@ -26,8 +26,10 @@ class CustomHeaderPlugin extends GenericPlugin {
 		$success = parent::register($category, $path, $mainContextId);
 		if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return true;
 		if ($success && $this->getEnabled()) {
-			// Insert CustomHeader page tag to footer
+			// Insert CustomHeader page tag to page header
 			HookRegistry::register('TemplateManager::display', array($this, 'displayTemplateHook'));
+			// Insert custom script to the page footer
+			HookRegistry::register('Templates::Common::Footer::PageFooter', array($this, 'insertFooter'));
 		}
 		return $success;
 	}
@@ -111,6 +113,23 @@ class CustomHeaderPlugin extends GenericPlugin {
 			$context = $request->getContext();
 			$templateMgr->addHeader('custom', $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'content'));
 		}
+		return false;
+	}
+
+	/**
+	 * Add custom footer to the page
+	 * 
+	 * @param $hookName string
+	 * @param $params array
+	 */
+	function insertFooter($hookName, $params) {
+		$templateMgr =& $params[0];
+		$output =& $params[2];
+		$request = Application::getRequest();
+		$context = $request->getContext();
+		
+		$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
+
 		return false;
 	}
 
