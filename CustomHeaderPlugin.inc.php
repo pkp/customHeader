@@ -17,9 +17,7 @@ import('lib.pkp.classes.plugins.GenericPlugin');
 
 class CustomHeaderPlugin extends GenericPlugin {
 	/** @var bool Whether or not the header has been injected */
-	var $headerInjected = false;
-	/** @var bool Whether or not the footer has been injected */
-	var $footerInjected = false;
+	var $injected = false;
 
 	/**
 	 * @copydoc Plugin::register()
@@ -108,8 +106,8 @@ class CustomHeaderPlugin extends GenericPlugin {
 	 * @param $params array
 	 */
 	function displayTemplateHook($hookName, $params) {
-		if (!$this->headerInjected) {
-			$this->headerInjected = true;
+		if (!$this->injected) {
+			$this->injected = true;
 			$templateMgr =& $params[0];
 			$request = Application::getRequest();
 			$context = $request->getContext();
@@ -125,16 +123,12 @@ class CustomHeaderPlugin extends GenericPlugin {
 	 * @param $params array
 	 */
 	function insertFooter($hookName, $params) {
-		if (!$this->footerInjected) {
-			$this->footerInjected = true;
-			$templateMgr =& $params[0];
-			$output =& $params[2];
- 			$request = Application::getRequest();
-			$context = $request->getContext();
-			
-			$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
-		}			
-		return false;
+		$templateMgr =& $params[0];
+		$output =& $params[2];
+		$request = Application::getRequest();
+		$context = $request->getContext();
+		
+		$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
 	}
 
 	/**
