@@ -17,7 +17,9 @@ import('lib.pkp.classes.plugins.GenericPlugin');
 
 class CustomHeaderPlugin extends GenericPlugin {
 	/** @var bool Whether or not the header has been injected */
-	var $injected = false;
+	var $headerInjected = false;
+	/** @var bool Whether or not the footer has been injected */
+	var $footerInjected = false;
 
 	/**
 	 * @copydoc Plugin::register()
@@ -26,8 +28,10 @@ class CustomHeaderPlugin extends GenericPlugin {
 		$success = parent::register($category, $path, $mainContextId);
 		if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return true;
 		if ($success && $this->getEnabled()) {
-			// Insert CustomHeader page tag to footer
+			// Insert CustomHeader page tag to page header
 			HookRegistry::register('TemplateManager::display', array($this, 'displayTemplateHook'));
+			// Insert custom script to the page footer
+			HookRegistry::register('Templates::Common::Footer::PageFooter', array($this, 'insertFooter'));
 		}
 		return $success;
 	}
@@ -104,13 +108,32 @@ class CustomHeaderPlugin extends GenericPlugin {
 	 * @param $params array
 	 */
 	function displayTemplateHook($hookName, $params) {
-		if (!$this->injected) {
-			$this->injected = true;
+		if (!$this->headerInjected) {
+			$this->headerInjected = true;
 			$templateMgr =& $params[0];
 			$request = Application::getRequest();
 			$context = $request->getContext();
 			$templateMgr->addHeader('custom', $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'content'));
 		}
+		return false;
+	}
+
+	/**
+	 * Add custom footer to the page
+	 * 
+	 * @param $hookName string
+	 * @param $params array
+	 */
+	function insertFooter($hookName, $params) {
+		if (!$this->footerInjected) {
+			$this->footerInjected = true;
+			$templateMgr =& $params[0];
+			$output =& $params[2];
+ 			$request = Application::getRequest();
+			$context = $request->getContext();
+			
+			$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
+		}			
 		return false;
 	}
 
