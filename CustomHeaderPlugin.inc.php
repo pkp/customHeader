@@ -129,6 +129,8 @@ class CustomHeaderPlugin extends GenericPlugin {
 		$context = $request->getContext();
 		
 		$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
+
+		return false;
 	}
 
 	/**
