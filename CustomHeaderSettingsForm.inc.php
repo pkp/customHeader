@@ -68,8 +68,10 @@ class CustomHeaderSettingsForm extends Form {
 	/**
 	 * Save settings.
 	 */
-	function execute() {
+	function execute($request) {
 		$this->_plugin->updateSetting($this->_contextId, 'content', $this->getData('content'), 'string');
 		$this->_plugin->updateSetting($this->_contextId, 'footerContent', $this->getData('footerContent'), 'string');
+		$notificationManager = new NotificationManager();
+		$notificationManager->createTrivialNotification($request->getUser()->getId(), NOTIFICATION_TYPE_SUCCESS);
 	}
 }

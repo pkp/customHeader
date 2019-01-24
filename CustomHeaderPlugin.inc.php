@@ -89,7 +89,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 				if ($request->getUserVar('save')) {
 					$form->readInputData();
 					if ($form->validate()) {
-						$form->execute();
+						$form->execute($request);
 						return new JSONMessage(true);
 					}
 				} else {
