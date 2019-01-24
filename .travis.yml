@@ -40,3 +40,6 @@ install:
   - lib/pkp/tools/travis/dump-database.sh
 script:
   - lib/pkp/lib/vendor/phpunit/phpunit/phpunit --debug -v --configuration lib/pkp/tests/phpunit-env2.xml plugins/generic/customHeader/tests/functional/CustomHeaderFunctionalTest.php
+after_failure:
+  - sudo apt-get install sharutils
+  - tar cz lib/pkp/tests/results | uuencode -m -
