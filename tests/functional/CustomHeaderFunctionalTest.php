@@ -17,14 +17,7 @@ import('lib.pkp.tests.WebTestCase');
 
 class CustomHeaderFunctionalTest extends WebTestCase {
 	/**
-	 * @copydoc WebTestCase::getAffectedTables
-	 */
-	protected function getAffectedTables() {
-		return PKP_TEST_ENTIRE_DB;
-	}
-
-	/**
-	 * Enable the plugin
+	 * Enable and exercise the plugin
 	 */
 	function testCustomHeader() {
 		$this->open(self::$baseUrl);
