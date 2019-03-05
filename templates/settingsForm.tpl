@@ -31,7 +31,7 @@
 	{/fbvFormArea}
 
 	{fbvFormArea id="customHeaderSettingsFormArea"}
-		{fbvFormSection for="footerContent" title="plugins.generic.customHeader.content"}
+		{fbvFormSection for="footerContent" title="plugins.generic.customHeader.footerContent"}
 			{fbvElement type="textarea" name="footerContent" id="footerContent" value=$footerContent height=$fbvStyles.height.TALL}
 		{/fbvFormSection}
 	{/fbvFormArea}
