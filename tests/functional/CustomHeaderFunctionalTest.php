@@ -15,6 +15,10 @@
 
 import('lib.pkp.tests.WebTestCase');
 
+use Facebook\WebDriver\Interactions\WebDriverActions;
+use Facebook\WebDriver\WebDriverExpectedCondition;
+use Facebook\WebDriver\WebDriverBy;
+
 class CustomHeaderFunctionalTest extends WebTestCase {
 	/**
 	 * Enable and exercise the plugin
@@ -23,19 +27,21 @@ class CustomHeaderFunctionalTest extends WebTestCase {
 		$this->open(self::$baseUrl);
 
 		$this->logIn('admin', 'admin');
-		$this->waitForElementPresent($selector='link=Website');
-		$this->clickAndWait($selector);
-		$this->click('link=Plugins');
+		$actions = new WebDriverActions(self::$driver);
+		$actions->moveToElement($this->waitForElementPresent('//ul[@id="navigationPrimary"]//a[contains(text(),"Settings")]'))
+			->click($this->waitForElementPresent('//ul[@id="navigationPrimary"]//a[contains(text(),"Website")]'))
+			->perform();
+		$this->click('//a[text()="Plugins"]');
 
 		// Find and enable the plugin
-		$this->waitForElementPresent($selector = '//input[starts-with(@id, \'select-cell-customheaderplugin-enabled\')]');
-		$this->assertElementNotPresent('link=Custom Header Plugin'); // Plugin should be disabled
-		$this->click($selector); // Enable plugin
+		$this->click('//input[starts-with(@id, \'select-cell-customheaderplugin-enabled\')]');
 		$this->waitForElementPresent('//div[contains(.,\'The plugin "Custom Header Plugin" has been enabled.\')]');
+		sleep(1);
 
 		// Edit the plugin settings
-		$this->waitForElementPresent($selector='//a[contains(@id,\'customheaderplugin-settings\')]');
-		$this->click($selector);
+		self::$driver->executeScript('window.scroll(0,-50);'); // FIXME: Give it an extra margin of pixels
+		$this->click('//tr[contains(@id,"customheaderplugin")]//a[contains(@class,"show_extras")]');
+		$this->click('//a[contains(@id,\'customheaderplugin-settings\')]');
 		$this->waitForElementPresent($selector='//textarea[starts-with(@id, \'headerContent-\')]');
 		$this->type($selector, '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>');
 		$this->type('//textarea[starts-with(@id, \'footerContent-\')]', '<a class="twitter-timeline" href="https://twitter.com/pkp?ref_src=twsrc%5Etfw">Tweets by pkp</a>');
@@ -43,7 +49,7 @@ class CustomHeaderFunctionalTest extends WebTestCase {
 		$this->waitForElementPresent('//div[contains(.,\'Your changes have been saved.\')]');
 
 		// Check that a Twitter timeline appears on the homepage.
-		sleep(5);
+		sleep(1);
 		$this->open(self::$baseUrl);
 		$this->waitForElementPresent('//script[@src=\'https://platform.twitter.com/widgets.js\']');
 		$this->waitForElementPresent('//iframe[contains(@id,\'twitter-widget\')]');
