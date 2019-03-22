@@ -36,7 +36,6 @@ install:
   # Install OJS/OMP & prep data environment
   - lib/pkp/lib/vendor/phpunit/phpunit/phpunit --configuration lib/pkp/tests/phpunit-env1.xml tests/data/10-InstallationTest.php
   - lib/pkp/lib/vendor/phpunit/phpunit/phpunit --configuration lib/pkp/tests/phpunit-env1.xml tests/data/20-CreateContextTest.php
-  - lib/pkp/lib/vendor/phpunit/phpunit/phpunit --configuration lib/pkp/tests/phpunit-env1.xml tests/data/59-LogOutTest.php
   - lib/pkp/tools/travis/dump-database.sh
 script:
   - set +xe
