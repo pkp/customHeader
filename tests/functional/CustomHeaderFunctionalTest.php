@@ -29,7 +29,6 @@ class CustomHeaderFunctionalTest extends WebTestCase {
 
 		// Find and enable the plugin
 		$this->waitForElementPresent($selector = '//input[starts-with(@id, \'select-cell-customheaderplugin-enabled\')]');
-		$this->assertElementNotPresent('link=Custom Header Plugin'); // Plugin should be disabled
 		$this->click($selector); // Enable plugin
 		$this->waitForElementPresent('//div[contains(.,\'The plugin "Custom Header Plugin" has been enabled.\')]');
 
