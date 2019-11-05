@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-05T06:58:42-08:00\n"
+"PO-Revision-Date: 2019-11-05T06:58:42-08:00\n"
+"Language: \n"
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Plugiciel d'en-tête personnalisé"
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Ajout d'en-têtes personnalisés sur le site Web."
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr "Ce plugiciel, une fois activé, permet d'ajouter des en-têtes personnalisés sur le site Web. Ceci peut être utilisé, par exemple, pour insérer du code javascript personnalisé."
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Contenu de l'en-tête"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Contenu du pied de page"

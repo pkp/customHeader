@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-05T06:58:42-08:00\n"
+"PO-Revision-Date: 2019-11-05T06:58:42-08:00\n"
+"Language: \n"
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Plugin de Cabeçalho HTML Personalizado"
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Permite adicionar HTML personalizado ao cabeçalho do website."
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr "Com este plugin ativo, será possível adicionar HTML personalizado ao cabeçalho (header) do website. Pode ser usado, por exemplo, para adicionar JavaScript personalizado."
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Conteúdo do Cabeçalho"
