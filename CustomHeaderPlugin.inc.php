@@ -125,7 +125,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 	function insertFooter($hookName, $params) {
 		$templateMgr =& $params[0];
 		$output =& $params[2];
-		$request = Application::getRequest();
+		$request = Application::get()->getRequest();
 		$context = $request->getContext();
 		
 		$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
