@@ -52,7 +52,6 @@ class CustomHeaderFunctionalTest extends WebTestCase {
 		sleep(1);
 		$this->open(self::$baseUrl);
 		sleep(5);
-		$this->waitForElementPresent('//script[@src=\'https://platform.twitter.com/widgets.js\']');
 		$this->waitForElementPresent('//iframe[contains(@id,\'twitter-widget\')]');
 
 		$this->logOut();
