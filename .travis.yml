@@ -10,7 +10,9 @@ addons:
 sudo: required
 
 php:
+  - 7.2
   - 7.3
+  - 7.4
 env:
   - APPLICATION=ojs BRANCH=master TEST=mysql
   - APPLICATION=ojs BRANCH=master TEST=pgsql
