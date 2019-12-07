@@ -51,6 +51,7 @@ class CustomHeaderFunctionalTest extends WebTestCase {
 		// Check that a Twitter timeline appears on the homepage.
 		sleep(1);
 		$this->open(self::$baseUrl);
+		sleep(5);
 		$this->waitForElementPresent('//script[@src=\'https://platform.twitter.com/widgets.js\']');
 		$this->waitForElementPresent('//iframe[contains(@id,\'twitter-widget\')]');
 
