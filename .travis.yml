@@ -25,9 +25,6 @@ install:
   - cd ~/${APPLICATION}
   - git submodule update --init --recursive
   - source lib/pkp/tools/travis/prepare-tests.sh
-  # Prepare server environment
-  - source lib/pkp/tools/travis/start-xvfb.sh
-  - lib/pkp/tools/travis/start-selenium.sh
   - lib/pkp/tools/travis/prepare-webserver.sh
   # Build/install dependencies
   - lib/pkp/tools/travis/install-composer-dependencies.sh
@@ -35,11 +32,6 @@ install:
   # Make sure we're using the current checkout of this repo rather than the built-in OJS/OMP version
   - ln -s ${TRAVIS_BUILD_DIR} ~/${APPLICATION}/plugins/generic/customHeader
   # Install OJS/OMP & prep data environment
-  - lib/pkp/lib/vendor/phpunit/phpunit/phpunit --configuration lib/pkp/tests/phpunit-env1.xml --filter "InstallationTest|CreateContextTest" tests/data
-  - lib/pkp/tools/travis/dump-database.sh
+  - $(npm bin)/cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
 script:
-  - set +xe
-  - lib/pkp/lib/vendor/phpunit/phpunit/phpunit --debug -v --configuration lib/pkp/tests/phpunit-env2.xml plugins/generic/customHeader/tests/functional/CustomHeaderFunctionalTest.php
-after_failure:
-  - sudo apt-get install sharutils imagemagick
-  - tar cz lib/pkp/tests/results | uuencode -m -
+  - $(npm bin)/cypress run --config integrationFolder=plugins/generic/customHeader/cypress/tests
