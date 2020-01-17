@@ -18,6 +18,7 @@ describe('Custom Header plugin tests', function() {
 		// Find and enable the plugin
 		cy.get('input[id^="select-cell-customheaderplugin-enabled"]').click();
 		cy.get('div:contains(\'The plugin "Custom Header Plugin" has been enabled.\')');
+		cy.waitJQuery();
 
 		cy.get('tr[id*="customheaderplugin"] a.show_extras').click();
 		cy.get('a[id*="customheaderplugin-settings"]').click();
