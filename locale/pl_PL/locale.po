@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-01-30T18:06:40+00:00\n"
+"PO-Revision-Date: 2020-01-30T18:06:40+00:00\n"
+"Language: \n"
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Własne nagłówki"
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Wtyczka umożliwia dodanie kodu w nagłówku strony."
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr "Dzięki temu pluginowi nagłówki niestandardowe mogą być dodawane do strony internetowej. Może to być wykorzystane, na przykład, do dodania niestandardowego Javascript."
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Zawartość nagłówka"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Zawartość stopki"
