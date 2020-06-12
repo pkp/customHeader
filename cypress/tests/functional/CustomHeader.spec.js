@@ -11,8 +11,7 @@ describe('Custom Header plugin tests', function() {
 	it('Creates and exercises a custom header', function() {
 		cy.login('admin', 'admin', 'publicknowledge');
 
-		cy.get('ul[id="navigationPrimary"] a:contains("Settings")').click();
-		cy.get('ul[id="navigationPrimary"] a:contains("Website")').click();
+		cy.get('.app__nav a').contains('Website').click();
 		cy.get('button[id="plugins-button"]').click();
 
 		// Find and enable the plugin
