@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-07-21 12:29+0000\n"
+"Last-Translator: Manolis Saldaris <omanos@gmail.com>\n"
+"Language-Team: Greek <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/el_GR/>\n"
+"Language: el_GR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Περιεχόμενο Υποσέλιδου"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Περιεχόμενο Κεφαλίδας"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Ενεργοποιώντας αυτό το πρόσθετο, μπορείτε να προσθέσετε προσαρμοσμένες "
+"κεφαλίδες στον ιστότοπο. Αυτό μπορεί να χρησιμοποιηθεί, για παράδειγμα, για "
+"την προσθήκη προσαρμοσμένης Javascript."
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Προσθέστε διαφορετικές κεφαλίδες στον ιστότοπο."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Πρόσθετο δημιουργίας Προσαρμοσμένης Κεφαλίδα"
