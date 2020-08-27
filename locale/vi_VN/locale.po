@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-07-11 17:40+0000\n"
+"Last-Translator: Tran Ngoc Trung <khuchatthienduong@gmail.com>\n"
+"Language-Team: Vietnamese <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/vi_VN/>\n"
+"Language: vi_VN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Nội dung chân trang"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Nội dung đầu trang"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Nếu plugin này được kích hoạt đầu trang tùy chỉnh có thể được thêm vào trang "
+"web. Điều này có thể được sử dụng, ví dụ, để thêm Javascript tùy chỉnh."
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Thêm đầu trang tùy ý vào trang web."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Plugin đầu trang tùy chỉnh"

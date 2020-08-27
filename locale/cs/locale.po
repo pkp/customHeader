@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-07-23 05:47+0000\n"
+"Last-Translator: Jiří Dlouhý <jiri.dlouhy@czp.cuni.cz>\n"
+"Language-Team: Czech <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Obsah patičky"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Obsah záhlaví"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Pokud povolíte tento plugin, můžete na webové stránky přidat uživatelské "
+"záhlaví. To může být použito, například pro přidání uživatelského "
+"Javascriptu."
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Přidat povinné záhlaví na webovou stránku."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Plugin uživatelského záhlaví"
