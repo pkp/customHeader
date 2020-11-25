@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-11-24 16:58+0000\n"
+"Last-Translator: Martin Brändle <martin.braendle@uzh.ch>\n"
+"Language-Team: Italian <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Contenuto del piè di pagina"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Contenuto dell'intestazione"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Con questo plugin è possibile aggiungere intestazioni personalizzate al sito "
+"web. Questo può essere utilizzato per aggiungere codice Javascript "
+"personalizzato, ad esempio."
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Aggiungere intestazioni arbitrarie al sito web."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Plugin di testata personalizzato"

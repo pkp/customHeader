@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-10-19 15:42+0000\n"
+"Last-Translator: Antti-Jussi Nygård <ajnyga@gmail.com>\n"
+"Language-Team: Finnish <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/fi_FI/>\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Footer-osan sisältö"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Header-osion sisältö"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Tällä lisäosalla voi lisätä mukautettua sisältöä sivuston Header-osioon. "
+"Ominaisuutta voi käyttää esimerkiksi Javascript-koodien lisäämiseen."
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Lisää mukautettua sisältöä julkisen sivuston Header-osioon."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Mukautettu Header -lisäosa"
