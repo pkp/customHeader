@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-01-06 09:52+0000\n"
+"Last-Translator: Mirko Spiroski <mspiroski@id-press.eu>\n"
+"Language-Team: Macedonian <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/mk_MK/>\n"
+"Language: mk_MK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n==1 || n%10==1 ? 0 : 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Со овој плагин се овозможува да се додадат прилагодливи наслови на "
+"списанието. Ова може да се користи, на пример, за додавање на кориснички "
+"Јава скрипти."
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Содржина на подножјето"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Содржина на насловот"
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Додади произволни наслови на вебсајтот."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Плагин за прилагодливо заглавие"
