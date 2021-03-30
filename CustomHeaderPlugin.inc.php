@@ -109,7 +109,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 		if (!$this->injected) {
 			$this->injected = true;
 			$templateMgr =& $params[0];
-			$request = Application::getRequest();
+			$request = Application::get()->getRequest();
 			$context = $request->getContext();
 			$templateMgr->addHeader('custom', $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'content'));
 		}
@@ -118,7 +118,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 
 	/**
 	 * Add custom footer to the page
-	 * 
+	 *
 	 * @param $hookName string
 	 * @param $params array
 	 */
@@ -127,7 +127,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 		$output =& $params[2];
 		$request = Application::get()->getRequest();
 		$context = $request->getContext();
-		
+
 		$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
 
 		return false;
