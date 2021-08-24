@@ -1,2 +1,31 @@
+# Viveka Svensson <viveka.svensson@lnu.se>, 2021.
 msgid ""
-msgstr "X-Generator: Weblate\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit"
+msgstr ""
+"PO-Revision-Date: 2021-08-25 12:05+0000\n"
+"Last-Translator: Viveka Svensson <viveka.svensson@lnu.se>\n"
+"Language-Team: Swedish <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/sv_SE/>\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Sidfotens innehåll"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Sidhuvudets innehåll"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Med detta plugin aktiverat är det möjligt att lägga till ett anpassat "
+"sidhuvud till webbplatsen. Det kan till exempel användas för att lägga till "
+"anpassat Javascript."
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Lägg till eget sidhuvud för webbsidan."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Plugin för  anpassning av sidhuvud"
