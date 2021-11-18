@@ -8,6 +8,7 @@ os: linux
 language: php
 
 addons:
+  postgresql: "9.5"
   apt:
     update: true
 
@@ -35,6 +36,8 @@ install:
   # Make sure we're using the current checkout of this repo rather than the built-in OJS/OMP version
   - ln -s ${TRAVIS_BUILD_DIR} ~/${APPLICATION}/plugins/generic/customHeader
   # Install OJS/OMP & prep data environment
-  - $(npm bin)/cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
 script:
+  - $(npm bin)/cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
   - $(npm bin)/cypress run --config integrationFolder=plugins/generic/customHeader/cypress/tests
+after_failure:
+  - cat error.log
