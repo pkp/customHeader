@@ -68,9 +68,10 @@ class CustomHeaderSettingsForm extends Form {
 	/**
 	 * Save settings.
 	 */
-	function execute($request, ...$functionArgs) {
-		parent::execute($request, ...$functionArgs);
+	function execute(...$functionArgs) {
+		parent::execute(...$functionArgs);
 
+		$request = Application::get()->getRequest();
 		$this->_plugin->updateSetting($this->_contextId, 'content', $this->getData('content'), 'string');
 		$this->_plugin->updateSetting($this->_contextId, 'footerContent', $this->getData('footerContent'), 'string');
 		$notificationManager = new NotificationManager();
