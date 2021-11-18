@@ -3,11 +3,13 @@
 
 language: php
 
+dist: bionic
+os: linux
+language: php
+
 addons:
   apt:
     update: true
-
-sudo: required
 
 php:
   - 7.3
