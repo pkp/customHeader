@@ -1,8 +1,6 @@
 # @file
 # .travis.yml - PKP Plugins Integration
 
-language: php
-
 dist: bionic
 os: linux
 language: php
@@ -13,8 +11,8 @@ addons:
     update: true
 
 php:
-  - 7.4
   - 8.0
+  - 8.1
 env:
   - APPLICATION=ojs BRANCH=main TEST=mysql
   - APPLICATION=ojs BRANCH=main TEST=pgsql
