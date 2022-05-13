@@ -106,17 +106,17 @@ class CustomHeaderPlugin extends GenericPlugin {
 	 * @param $params array
 	 */
 	function displayTemplateHook($hookName, $params) {
-        if (!$this->injected) {
-            $this->injected = true;
-            $templateMgr =& $params[0];
-            $templateResource =& $params[1];
-            $request = Application::get()->getRequest();
-            $context = $request->getContext();
-            if($templateResource != "plugins-1-plugins-generic-pdfJsViewer-generic-pdfJsViewer:submissionGalley.tpl")
-                $templateMgr->addHeader('custom', $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'content'));
-        }
-        return false;
-    }
+		if (!$this->injected) {
+			$this->injected = true;
+			$templateMgr =& $params[0];
+			$templateResource =& $params[1];
+			$request = Application::get()->getRequest();
+			$context = $request->getContext();
+			if($templateResource != "plugins-1-plugins-generic-pdfJsViewer-generic-pdfJsViewer:submissionGalley.tpl")
+				$templateMgr->addHeader('custom', $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'content'));
+		}
+		return false;
+	}
 
     /**
      * Add custom footer to the page
@@ -124,18 +124,18 @@ class CustomHeaderPlugin extends GenericPlugin {
      * @param $hookName string
      * @param $params array
      */
-    function insertFooter($hookName, $params) {
-        $templateMgr =& $params[0];
-        $smarty =& $params[1];
-        $output =& $params[2];
-        $request = Application::get()->getRequest();
-        $context = $request->getContext();
+	function insertFooter($hookName, $params) {
+		$templateMgr =& $params[0];
+		$smarty =& $params[1];
+		$output =& $params[2];
+		$request = Application::get()->getRequest();
+		$context = $request->getContext();
 
-        if ($smarty->parent->template_resource != "plugins-1-plugins-generic-pdfJsViewer-generic-pdfJsViewer:submissionGalley.tpl")
-            $output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
+		if ($smarty->parent->template_resource != "plugins-1-plugins-generic-pdfJsViewer-generic-pdfJsViewer:submissionGalley.tpl")
+			$output .= $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'footerContent');
 
-        return false;
-    }
+		return false;
+	}
 	/**
 	 * This plugin can be used site-wide or in a specific context. The
 	 * isSitePlugin check is used to grant access to different users, so this
