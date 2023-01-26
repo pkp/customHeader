@@ -1,8 +1,8 @@
 /**
- * @file cypress/tests/functional/CustomHeader.spec.js
+ * @file cypress/tests/functional/CustomHeader.cy.js
  *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2000-2021 John Willinsky
+ * Copyright (c) 2014-2023 Simon Fraser University
+ * Copyright (c) 2000-2023 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
  */
@@ -27,6 +27,7 @@ describe('Custom Header plugin tests', function() {
 		cy.get('div:contains("Your changes have been saved.")');
 
 		cy.visit('');
+		cy.waitJQuery(5000);
 		cy.get('iframe[id*="twitter-widget"]');
 	});
 })

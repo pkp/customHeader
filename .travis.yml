@@ -6,9 +6,13 @@ os: linux
 language: php
 
 addons:
+  chrome: beta
   postgresql: "9.5"
   apt:
     update: true
+    packages:
+      - libvulkan1
+      - libu2f-udev
 
 php:
   - 8.0
@@ -35,7 +39,7 @@ install:
   - ln -s ${TRAVIS_BUILD_DIR} ~/${APPLICATION}/plugins/generic/customHeader
   # Install OJS/OMP & prep data environment
 script:
-  - $(npm bin)/cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
-  - $(npm bin)/cypress run --config integrationFolder=plugins/generic/customHeader/cypress/tests
+  - $(npm bin)/cypress run --spec "cypress/tests/data/10-ApplicationSetup/10-Installation.cy.js,cypress/tests/data/10-ApplicationSetup/20-CreateContext.cy.js"
+  - $(npm bin)/cypress run --config '{"specPattern":["plugins/generic/customHeader/cypress/tests/functional/*.cy.js"]}'
 after_failure:
   - cat error.log
