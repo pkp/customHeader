@@ -27,6 +27,7 @@ describe('Custom Header plugin tests', function() {
 		cy.get('div:contains("Your changes have been saved.")');
 
 		cy.visit('');
+		cy.waitJQuery(5000);
 		cy.get('iframe[id*="twitter-widget"]');
 	});
 })
