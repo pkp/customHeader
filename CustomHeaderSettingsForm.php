@@ -1,17 +1,16 @@
 <?php
 
 /**
- * @file CustomHeaderSettingsForm.inc.php
+ * @file CustomHeaderSettingsForm.php
  *
  * Copyright (c) 2013-2021 Simon Fraser University
  * Copyright (c) 2003-2021 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
- * @class CustomHeaderSettingsForm
- * @ingroup plugins_generic_customHeaders
- *
  * @brief Form for managers to modify custom header plugin settings
  */
+
+namespace APP\plugins\generic\customHeader;
 
 use PKP\form\Form;
 use APP\core\Application;

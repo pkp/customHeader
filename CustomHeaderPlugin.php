@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @file CustomHeaderPlugin.inc.php
+ * @file CustomHeaderPlugin.php
  *
  * Copyright (c) 2013-2021 Simon Fraser University
  * Copyright (c) 2003-2021 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
- * @class CustomHeaderPlugin
- * @ingroup plugins_generic_customHeader
- *
  * @brief CustomHeader plugin class
  */
+
+namespace APP\plugins\generic\customHeader;
 
 use PKP\plugins\GenericPlugin;
 use PKP\config\Config;
 use PKP\plugins\HookRegistry;
+use PKP\linkAction\LinkAction;
 use PKP\linkAction\request\AjaxModal;
 use PKP\core\JSONMessage;
 use APP\i18n\AppLocale;
@@ -86,10 +86,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 			case 'settings':
 				$context = $request->getContext();
 
-				AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON,  LOCALE_COMPONENT_PKP_MANAGER);
 				$templateMgr = TemplateManager::getManager($request);
-
-				$this->import('CustomHeaderSettingsForm');
 				$form = new CustomHeaderSettingsForm($this, $context?$context->getId():CONTEXT_ID_NONE);
 
 				if ($request->getUserVar('save')) {
@@ -151,4 +148,8 @@ class CustomHeaderPlugin extends GenericPlugin {
 	function isSitePlugin() {
 		return !(Application::get()->getRequest()->getContext());
 	}
+}
+
+if (!PKP_STRICT_MODE) {
+    class_alias('\APP\plugins\generic\customHeader\CustomHeaderPlugin', '\CustomHeaderPlugin');
 }
