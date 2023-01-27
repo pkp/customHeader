@@ -21,13 +21,13 @@ describe('Custom Header plugin tests', function() {
 
 		cy.get('tr[id*="customheaderplugin"] a.show_extras').click();
 		cy.get('a[id*="customheaderplugin-settings"]').click();
+		cy.waitJQuery(2000); // Wait for form to settle
 		cy.get('textarea[id^="headerContent-"]').type('<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>', {delay: 0});
 		cy.get('textarea[id^="footerContent-"]').type('<a class="twitter-timeline" href="https://twitter.com/pkp?ref_src=twsrc%5Etfw">Tweets by pkp</a>', {delay: 0});
 		cy.get('form[id="customHeaderSettingsForm"] button:contains("OK")').click();
 		cy.get('div:contains("Your changes have been saved.")');
 
 		cy.visit('');
-		cy.waitJQuery(5000);
 		cy.get('iframe[id*="twitter-widget"]');
 	});
 })
