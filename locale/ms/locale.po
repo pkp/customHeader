@@ -1,0 +1,30 @@
+# Studiorimau <studiorimau@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-10-05 10:06+0000\n"
+"Last-Translator: Studiorimau <studiorimau@gmail.com>\n"
+"Language-Team: Malay <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/ms/>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Kandungan Footer"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Kandungan Header"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Dengan plugin ini, custom header dapat ditambahkan ke laman web. Ini boleh "
+"digunakan, misalnya, untuk menambahkan Javascript custom."
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Tambah header rawak ke laman web."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Plugin Header Custom"
