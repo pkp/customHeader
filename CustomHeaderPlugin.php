@@ -14,7 +14,7 @@ namespace APP\plugins\generic\customHeader;
 
 use PKP\plugins\GenericPlugin;
 use PKP\config\Config;
-use PKP\plugins\HookRegistry;
+use PKP\plugins\Hook;
 use PKP\linkAction\LinkAction;
 use PKP\linkAction\request\AjaxModal;
 use PKP\core\JSONMessage;
@@ -34,9 +34,9 @@ class CustomHeaderPlugin extends GenericPlugin {
 		if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return true;
 		if ($success && $this->getEnabled()) {
 			// Insert CustomHeader page tag to page header
-			HookRegistry::register('TemplateManager::display', array($this, 'displayTemplateHook'));
+			Hook::add('TemplateManager::display', array($this, 'displayTemplateHook'));
 			// Insert custom script to the page footer
-			HookRegistry::register('Templates::Common::Footer::PageFooter', array($this, 'insertFooter'));
+			Hook::add('Templates::Common::Footer::PageFooter', array($this, 'insertFooter'));
 		}
 		return $success;
 	}
