@@ -112,6 +112,7 @@ class CustomHeaderPlugin extends GenericPlugin {
 			$request = Application::get()->getRequest();
 			$context = $request->getContext();
 			$templateMgr->addHeader('custom', $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'content'));
+			$templateMgr->addHeader('custombackend', $this->getSetting($context?$context->getId():CONTEXT_ID_NONE, 'backendContent'), ['contexts' => ['backend']]);
 		}
 		return false;
 	}
