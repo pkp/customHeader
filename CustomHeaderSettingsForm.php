@@ -36,6 +36,7 @@ class CustomHeaderSettingsForm extends Form {
 
 		parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
 
+		$this->addCheck(new \PKP\form\validation\FormValidatorCustom($this, 'backendContent', FORM_VALIDATOR_OPTIONAL_VALUE, 'plugins.generic.customHeader.backendContent.error', function ($backendContent) { return $this->validateWellFormed($backendContent); }));
 		$this->addCheck(new \PKP\form\validation\FormValidatorPost($this));
 		$this->addCheck(new \PKP\form\validation\FormValidatorCSRF($this));
 	}
@@ -46,6 +47,7 @@ class CustomHeaderSettingsForm extends Form {
 	function initData() {
 		$this->_data = array(
 			'content' => $this->_plugin->getSetting($this->_contextId, 'content'),
+			'backendContent' => $this->_plugin->getSetting($this->_contextId, 'backendContent'),
 			'footerContent' => $this->_plugin->getSetting($this->_contextId, 'footerContent')
 		);
 	}
@@ -54,7 +56,7 @@ class CustomHeaderSettingsForm extends Form {
 	 * Assign form data to user-submitted data.
 	 */
 	function readInputData() {
-		$this->readUserVars(array('content', 'footerContent'));
+		$this->readUserVars(array('content', 'backendContent', 'footerContent'));
 	}
 
 	/**
@@ -75,8 +77,25 @@ class CustomHeaderSettingsForm extends Form {
 
 		$request = Application::get()->getRequest();
 		$this->_plugin->updateSetting($this->_contextId, 'content', $this->getData('content'), 'string');
+		$this->_plugin->updateSetting($this->_contextId, 'backendContent', $this->getData('backendContent'), 'string');
 		$this->_plugin->updateSetting($this->_contextId, 'footerContent', $this->getData('footerContent'), 'string');
 		$notificationManager = new NotificationManager();
 		$notificationManager->createTrivialNotification($request->getUser()->getId(), NOTIFICATION_TYPE_SUCCESS);
+	}
+
+	/**
+	 * Validate that the input is well-formed XML
+	 * We want to avoid breaking the whole HTML page with an unclosed HTML attribute quote or tag
+	 * @param $input string
+	 * @return boolean
+	 */
+	function validateWellFormed($input) {
+		$libxml_errors_setting = libxml_use_internal_errors();
+		libxml_use_internal_errors(true);
+		libxml_clear_errors();
+		$xml = simplexml_load_string($input);
+		$isWellFormed = count(libxml_get_errors())==0;
+		libxml_use_internal_errors($libxml_errors_setting);
+		return $isWellFormed;
 	}
 }
