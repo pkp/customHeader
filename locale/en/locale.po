@@ -18,7 +18,7 @@ msgid "plugins.generic.customHeader.description"
 msgstr "Add arbitrary headers to the website."
 
 msgid "plugins.generic.customHeader.manager.settings.description"
-msgstr "With this plugin enabled custom headers can be added to the website. This can be used, for example, to add custom Javascript."
+msgstr "With this plugin enabled, a custom header and a custom footer can be added to the website. This can be used, for example, to add custom Javascript."
 
 msgid "plugins.generic.customHeader.content"
 msgstr "Header Content"
