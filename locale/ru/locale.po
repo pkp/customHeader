@@ -1,7 +1,7 @@
 # Pavel Pisklakov <ppv1979@mail.ru>, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-29 17:01+0000\n"
+"PO-Revision-Date: 2023-05-27 00:49+0000\n"
 "Last-Translator: Pavel Pisklakov <ppv1979@mail.ru>\n"
 "Language-Team: Russian <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/ru/>\n"
@@ -21,9 +21,9 @@ msgstr "Содержимое верхнего колонтитула"
 
 msgid "plugins.generic.customHeader.manager.settings.description"
 msgstr ""
-"Включение этого модуля позволяет добавить пользовательские колонтитулы на "
-"сайт. Это можно использовать, например, для добавления пользовательского "
-"Javascript."
+"Включение этого модуля позволяет добавить пользовательские верхний и нижний "
+"колонтитулы на сайт. Это можно использовать, например, для добавления "
+"пользовательского Javascript."
 
 msgid "plugins.generic.customHeader.description"
 msgstr "Добавляет произвольные колонтитулы на сайт."
