@@ -92,7 +92,8 @@ class CustomHeaderSettingsForm extends Form {
 		$libxml_errors_setting = libxml_use_internal_errors();
 		libxml_use_internal_errors(true);
 		libxml_clear_errors();
-		$xml = simplexml_load_string($input);
+		$dom = new DOMDocument();
+		$dom->loadHTML($input);
 		$isWellFormed = count(libxml_get_errors())==0;
 		libxml_use_internal_errors($libxml_errors_setting);
 		return $isWellFormed;
