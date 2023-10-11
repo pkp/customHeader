@@ -25,3 +25,9 @@ msgstr "Header Content"
 
 msgid "plugins.generic.customHeader.footerContent"
 msgstr "Footer Content"
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Editorial Backend Header Content"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "Editorial Backend Header Content must be valid XHTML."

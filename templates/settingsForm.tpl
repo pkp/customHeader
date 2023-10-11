@@ -8,12 +8,6 @@
  * Plugin settings
  *
  *}
-<div id="customHeaderSettings">
-<div id="description">{translate key="plugins.generic.customHeader.manager.settings.description"}</div>
-
-<div class="separator"></div>
-
-<br />
 
 <script>
 	$(function() {ldelim}
@@ -23,21 +17,24 @@
 </script>
 <form class="pkp_form" id="customHeaderSettingsForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT op="manage" category="generic" plugin=$pluginName verb="settings" save=true}">
 	{csrf}
+	<p id="description">{translate key="plugins.generic.customHeader.manager.settings.description"}</p>
+	{include file="controllers/notification/inPlaceNotification.tpl" notificationId="customHeaderFormNotification"}
 
 	{fbvFormArea id="customHeaderSettingsFormArea"}
 		{fbvFormSection for="headerContent" title="plugins.generic.customHeader.content"}
 			{fbvElement type="textarea" name="content" id="headerContent" value=$content height=$fbvStyles.height.TALL}
 		{/fbvFormSection}
-	{/fbvFormArea}
-
-	{fbvFormArea id="customHeaderSettingsFormArea"}
 		{fbvFormSection for="footerContent" title="plugins.generic.customHeader.footerContent"}
 			{fbvElement type="textarea" name="footerContent" id="footerContent" value=$footerContent height=$fbvStyles.height.TALL}
+		{/fbvFormSection}
+	{/fbvFormArea}
+
+	{fbvFormArea id="customHeaderBackendSettingsFormArea"}
+		{fbvFormSection for="backendContent" title="plugins.generic.customHeader.backendContent"}
+			{fbvElement type="textarea" name="backendContent" id="backendContent" value=$backendContent height=$fbvStyles.height.TALL}
 		{/fbvFormSection}
 	{/fbvFormArea}
 
 	{fbvFormButtons}
 </form>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
-</div>
