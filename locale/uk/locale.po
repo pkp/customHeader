@@ -1,7 +1,7 @@
 # Petro Bilous <petrobilous@ukr.net>, 2022, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-24 15:49+0000\n"
+"PO-Revision-Date: 2023-10-24 06:06+0000\n"
 "Last-Translator: Petro Bilous <petrobilous@ukr.net>\n"
 "Language-Team: Ukrainian <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/uk/>\n"
@@ -30,3 +30,9 @@ msgstr "Додати довільні заголовки на вебсайт."
 
 msgid "plugins.generic.customHeader.displayName"
 msgstr "Плагін користувацького заголовку"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "Контент заголовка редакційного вмісту має бути дійсним XHTML."
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Контент заголовка редакційного вмісту"
