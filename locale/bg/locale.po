@@ -1,7 +1,7 @@
 # Cyril Kamburov <cc@intermedia.bg>, 2022, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-24 15:49+0000\n"
+"PO-Revision-Date: 2023-10-24 06:06+0000\n"
 "Last-Translator: Cyril Kamburov <cc@intermedia.bg>\n"
 "Language-Team: Bulgarian <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/bg/>\n"
@@ -29,3 +29,11 @@ msgstr ""
 
 msgid "plugins.generic.customHeader.description"
 msgstr "Добавяне на произволни заглавки (горен колонтитул) към уебсайта."
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Редакторски панел (бекенд): Съдържание на заглавния текст"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr ""
+"Редакторски панел (бекенд): Съдържанието на заглавния текст трябва да бъде "
+"във валиден XHTML формат."
