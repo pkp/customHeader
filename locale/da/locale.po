@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-05T06:58:42-08:00\n"
-"PO-Revision-Date: 2023-05-24 15:49+0000\n"
+"PO-Revision-Date: 2023-10-24 06:06+0000\n"
 "Last-Translator: Alexandra Fogtmann-Schulz <alfo@kb.dk>\n"
 "Language-Team: Danish <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/da/>\n"
@@ -16,10 +16,10 @@ msgstr ""
 "X-Generator: Weblate 4.13.1\n"
 
 msgid "plugins.generic.customHeader.displayName"
-msgstr "Brugerdefineret header-plugin"
+msgstr "Brugerdefineret sidehoved-plugin"
 
 msgid "plugins.generic.customHeader.description"
-msgstr "Indsæt din egen header-kode på hjemmesiden."
+msgstr "Indsæt din egen sidehoved-kode på hjemmesiden."
 
 msgid "plugins.generic.customHeader.manager.settings.description"
 msgstr ""
@@ -28,7 +28,13 @@ msgstr ""
 "brugerdefineret Javascript."
 
 msgid "plugins.generic.customHeader.content"
-msgstr "Header-indhold"
+msgstr "Sidehoved-indhold"
 
 msgid "plugins.generic.customHeader.footerContent"
 msgstr "Sidefodsindhold"
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Redaktionel Backend Sidehoved-indhold"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "Redaktionel Backend Sidehoved-indhold skal være gyldig XHTML."
