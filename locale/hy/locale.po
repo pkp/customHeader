@@ -2,7 +2,7 @@
 # Tigran Zargaryan <tigran@flib.sci.am>, 2022, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-20 10:49+0000\n"
+"PO-Revision-Date: 2023-10-25 07:06+0000\n"
 "Last-Translator: Tigran Zargaryan <tigran@flib.sci.am>\n"
 "Language-Team: Armenian <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/hy/>\n"
@@ -30,3 +30,10 @@ msgstr "Կայքում ավելացրեք կամայական վերնախորա�
 
 msgid "plugins.generic.customHeader.displayName"
 msgstr "Անհատականացված վերնախորագրի հավելված"
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Խմբագրական Հետնամասի վերնախորագրի բովանդակությունը"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr ""
+"Խմբագրական Հետնամասի վերնախորագրի բովանդակությունը պետք է լինի վավեր XHTML:"
