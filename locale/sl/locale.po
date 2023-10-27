@@ -1,7 +1,7 @@
 # Primož Svetek <primoz.svetek@gmail.com>, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-07-22 12:58+0000\n"
+"PO-Revision-Date: 2023-10-28 16:06+0000\n"
 "Last-Translator: Primož Svetek <primoz.svetek@gmail.com>\n"
 "Language-Team: Slovenian <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/sl/>\n"
@@ -29,3 +29,9 @@ msgstr "Dodaj dodatno vsebino v glavo spletnih strani."
 
 msgid "plugins.generic.customHeader.displayName"
 msgstr "Vtičnik za glavo po meri"
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Vsebina uredniške glave zaledja"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "Vsebina uredniške glave zaledja mora biti veljaven XHTML."
