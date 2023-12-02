@@ -1,11 +1,12 @@
 # M. Ali <vorteem@gmail.com>, 2023.
+# "M. Ali" <vorteem@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-05T06:58:42-08:00\n"
-"PO-Revision-Date: 2023-08-12 02:06+0000\n"
-"Last-Translator: M. Ali <vorteem@gmail.com>\n"
+"PO-Revision-Date: 2023-12-02 04:33+0000\n"
+"Last-Translator: \"M. Ali\" <vorteem@gmail.com>\n"
 "Language-Team: Arabic <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/ar/>\n"
 "Language: ar\n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 4.18.2\n"
 
 msgid "plugins.generic.customHeader.displayName"
 msgstr "إضافة رأس الصفحة المخصص"
@@ -32,3 +33,9 @@ msgstr "محتوى رأس الصفحة"
 
 msgid "plugins.generic.customHeader.footerContent"
 msgstr "محتوى تذييل الصفحة"
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "محتوى رأس الجانب الخلفي لواجهة التحرير"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "محتوى رأس الجانب الخلفي لواجهة التحرير ينبغي أن يكون بتنسيق XHTML صحيح."
