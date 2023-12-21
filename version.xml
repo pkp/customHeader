@@ -13,8 +13,8 @@
 <version>
 	<application>customHeader</application>
 	<type>plugins.generic</type>
-	<release>1.0.3.1</release>
-	<date>2021-03-30</date>
+	<release>1.0.3.2</release>
+	<date>2023-12-20</date>
 	<lazy-load>1</lazy-load>
 	<class>CustomHeaderPlugin</class>
 </version>
