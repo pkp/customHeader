@@ -1,16 +1,16 @@
-# Cyril Kamburov <cc@intermedia.bg>, 2022.
+# Cyril Kamburov <cc@intermedia.bg>, 2022, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-03-27 15:56+0000\n"
+"PO-Revision-Date: 2023-10-24 06:06+0000\n"
 "Last-Translator: Cyril Kamburov <cc@intermedia.bg>\n"
 "Language-Team: Bulgarian <http://translate.pkp.sfu.ca/projects/plugins/"
-"custom-header-plugin/bg_BG/>\n"
-"Language: bg_BG\n"
+"custom-header-plugin/bg/>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.13.1\n"
 
 msgid "plugins.generic.customHeader.displayName"
 msgstr "Добавка за персонализирана заглавка (горен колонтитул)"
@@ -23,9 +23,17 @@ msgstr "Съдържание на заглавката (горен колонт�
 
 msgid "plugins.generic.customHeader.manager.settings.description"
 msgstr ""
-"С тази активирана добавка персонализирани заглавки (горен колонтитул) могат "
-"да бъдат добавени към уебсайта. Това може да се използва например за "
-"добавяне на персонализиран Javascript."
+"С тази активирана добавка персонализирани горен и долен колонтитул могат да "
+"бъдат добавени към уебсайта. Това може да се използва например за добавяне "
+"на персонализиран Javascript."
 
 msgid "plugins.generic.customHeader.description"
 msgstr "Добавяне на произволни заглавки (горен колонтитул) към уебсайта."
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Редакторски панел (бекенд): Съдържание на заглавния текст"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr ""
+"Редакторски панел (бекенд): Съдържанието на заглавния текст трябва да бъде "
+"във валиден XHTML формат."

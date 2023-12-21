@@ -1,16 +1,17 @@
+# Primož Svetek <primoz.svetek@gmail.com>, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-04-27 14:34+0000\n"
+"PO-Revision-Date: 2023-10-28 16:06+0000\n"
 "Last-Translator: Primož Svetek <primoz.svetek@gmail.com>\n"
 "Language-Team: Slovenian <http://translate.pkp.sfu.ca/projects/plugins/"
-"custom-header-plugin/sl_SI/>\n"
-"Language: sl_SI\n"
+"custom-header-plugin/sl/>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 3.9.1\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 4.13.1\n"
 
 msgid "plugins.generic.customHeader.footerContent"
 msgstr "Vsebina noge"
@@ -20,11 +21,17 @@ msgstr "Vsebina glave"
 
 msgid "plugins.generic.customHeader.manager.settings.description"
 msgstr ""
-"Vtičnik omogoča dodajanje dodatne vsebine v glavo spletnih strani. To se "
-"lahko uporablja na primer za dodajanje Javascript kode po meri."
+"Vtičnik omogoča dodajanje dodatne vsebine v glavo in nogo spletnih strani. "
+"To se lahko uporablja na primer za dodajanje Javascript kode po meri."
 
 msgid "plugins.generic.customHeader.description"
 msgstr "Dodaj dodatno vsebino v glavo spletnih strani."
 
 msgid "plugins.generic.customHeader.displayName"
 msgstr "Vtičnik za glavo po meri"
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Vsebina uredniške glave zaledja"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "Vsebina uredniške glave zaledja mora biti veljaven XHTML."

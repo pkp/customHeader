@@ -1,6 +1,7 @@
+# Jiří Dlouhý <jiri.dlouhy@czp.cuni.cz>, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-07-23 05:47+0000\n"
+"PO-Revision-Date: 2023-10-21 06:06+0000\n"
 "Last-Translator: Jiří Dlouhý <jiri.dlouhy@czp.cuni.cz>\n"
 "Language-Team: Czech <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/cs/>\n"
@@ -9,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.13.1\n"
 
 msgid "plugins.generic.customHeader.footerContent"
 msgstr "Obsah patičky"
@@ -20,7 +21,7 @@ msgstr "Obsah záhlaví"
 msgid "plugins.generic.customHeader.manager.settings.description"
 msgstr ""
 "Pokud povolíte tento plugin, můžete na webové stránky přidat uživatelské "
-"záhlaví. To může být použito, například pro přidání uživatelského "
+"záhlaví a zápatí. To může být použito, například pro přidání uživatelského "
 "Javascriptu."
 
 msgid "plugins.generic.customHeader.description"
@@ -28,3 +29,9 @@ msgstr "Přidat povinné záhlaví na webovou stránku."
 
 msgid "plugins.generic.customHeader.displayName"
 msgstr "Plugin uživatelského záhlaví"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "Obsah redakčního záhlaví Backend musí být validní XHTML."
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Redakční obsah záhlaví Backend"
