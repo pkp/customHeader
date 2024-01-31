@@ -1,7 +1,7 @@
-# Diego José Macêdo <diegojmacedo@gmail.com>, 2023.
+# Diego José Macêdo <diegojmacedo@gmail.com>, 2023, 2024.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-27 00:49+0000\n"
+"PO-Revision-Date: 2024-02-01 02:39+0000\n"
 "Last-Translator: Diego José Macêdo <diegojmacedo@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <http://translate.pkp.sfu.ca/projects/"
 "plugins/custom-header-plugin/pt_BR/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 4.18.2\n"
 
 msgid "plugins.generic.customHeader.footerContent"
 msgstr "Conteúdo do Rodapé"
@@ -29,3 +29,9 @@ msgstr "Adicione cabeçalhos arbitrários ao site."
 
 msgid "plugins.generic.customHeader.displayName"
 msgstr "Plugin de Cabeçalho Personalizado"
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Conteúdo editorial do cabeçalho de backend"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "O conteúdo do cabeçalho editorial de back-end deve ser XHTML válido."
