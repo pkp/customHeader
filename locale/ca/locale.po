@@ -1,7 +1,7 @@
-# Jordi LC <jordi.lacruz@uab.cat>, 2023.
+# Jordi LC <jordi.lacruz@uab.cat>, 2023, 2024.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-27 00:49+0000\n"
+"PO-Revision-Date: 2024-04-20 02:54+0000\n"
 "Last-Translator: Jordi LC <jordi.lacruz@uab.cat>\n"
 "Language-Team: Catalan <http://translate.pkp.sfu.ca/projects/plugins/"
 "custom-header-plugin/ca/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 4.18.2\n"
 
 msgid "plugins.generic.customHeader.description"
 msgstr "Afegir capçaleres personalitzades al lloc web."
@@ -29,3 +29,11 @@ msgstr ""
 "Si activeu aquest mòdul podreu afegir una capçalera i un peu de pàgina "
 "personalitzats al lloc web. Això es pot fer servir, per exemple, per afegir "
 "Javascript personalitzat."
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Contingut de la capçalera de la interfície d'administració editorial"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr ""
+"El contingut de la capçalera de la interfície d'administració editorial ha "
+"de ser XHTML vàlid."
