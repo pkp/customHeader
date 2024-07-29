@@ -1,0 +1,54 @@
+on: [push]
+name: customHeader
+jobs:
+  customHeader:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - application: ojs
+            php-version: 8.3
+            database: mysql
+          - application: ojs
+            php-version: 8.2
+            database: mysql
+          - application: ojs
+            php-version: 8.3
+            database: pgsql
+          - application: ojs
+            php-version: 8.2
+            database: pgsql
+          - application: omp
+            php-version: 8.3
+            database: mysql
+          - application: omp
+            php-version: 8.2
+            database: mysql
+          - application: omp
+            php-version: 8.3
+            database: pgsql
+          - application: omp
+            php-version: 8.2
+            database: pgsql
+          - application: ops
+            php-version: 8.3
+            database: mysql
+          - application: ops
+            php-version: 8.2
+            database: mysql
+          - application: ops
+            php-version: 8.3
+            database: pgsql
+          - application: ops
+            php-version: 8.2
+            database: pgsql
+
+    name: customHeader
+    steps:
+      - uses: xmlFlow/pkp-github-actions@v1
+        with:
+         node_version: 20
+         branch: main
+         repository: pkp
+         plugin: true
