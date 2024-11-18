@@ -1,8 +1,37 @@
-# Dorien van Rheenen <d.van.rheenen@rug.nl>, 2023.
+# Dorien van Rheenen <d.van.rheenen@rug.nl>, 2023, 2024.
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-11-04 16:32+0000\n"
+"Last-Translator: Dorien van Rheenen <d.van.rheenen@rug.nl>\n"
+"Language-Team: Dutch <http://translate.pkp.sfu.ca/projects/plugins/"
+"custom-header-plugin/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Weblate\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.18.2\n"
+
+msgid "plugins.generic.customHeader.backendContent"
+msgstr "Redactionele kopregelinhoud"
+
+msgid "plugins.generic.customHeader.backendContent.error"
+msgstr "Redactionele kopregelinhoud moet geldige XHTML zijn."
+
+msgid "plugins.generic.customHeader.description"
+msgstr "Voeg zelf gekozen headers toe aan de website."
+
+msgid "plugins.generic.customHeader.displayName"
+msgstr "Aangepaste Header Plugin"
+
+msgid "plugins.generic.customHeader.content"
+msgstr "Header inhoud"
+
+msgid "plugins.generic.customHeader.footerContent"
+msgstr "Footer inhoud"
+
+msgid "plugins.generic.customHeader.manager.settings.description"
+msgstr ""
+"Met deze plugin kan een aangepaste header en een aangepaste footer worden "
+"toegevoegd aan de website. Dit kan bijvoorbeeld gebruikt worden om "
+"Javascript toe te voegen."
