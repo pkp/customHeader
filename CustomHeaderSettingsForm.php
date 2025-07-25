@@ -77,7 +77,7 @@ class CustomHeaderSettingsForm extends Form
     /**
      * Save settings.
      */
-    public function execute(...$functionArgs): mixed
+    public function execute(...$functionArgs)
     {
         parent::execute(...$functionArgs);
 
@@ -86,7 +86,7 @@ class CustomHeaderSettingsForm extends Form
         $this->plugin->updateSetting($this->contextId, 'backendContent', $this->getData('backendContent'), 'string');
         $this->plugin->updateSetting($this->contextId, 'footerContent', $this->getData('footerContent'), 'string');
         $notificationManager = new NotificationManager();
-        $notificationManager->createTrivialNotification($request->getUser()->getId(), NOTIFICATION_TYPE_SUCCESS);
+        $notificationManager->createTrivialNotification($request->getUser()->getId());
     }
 
     /**

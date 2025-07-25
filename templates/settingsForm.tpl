@@ -1,8 +1,8 @@
 {**
  * templates/settingsForm.tpl
  *
- * Copyright (c) 2013-2023 Simon Fraser University
- * Copyright (c) 2003-2023 John Willinsky
+ * Copyright (c) 2013-2025 Simon Fraser University
+ * Copyright (c) 2003-2025 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
  * Plugin settings
@@ -15,7 +15,7 @@
 		$('#customHeaderSettingsForm').pkpHandler('$.pkp.controllers.form.AjaxFormHandler');
 	{rdelim});
 </script>
-<form class="pkp_form" id="customHeaderSettingsForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT op="manage" category="generic" plugin=$pluginName verb="settings" save=true}">
+<form class="pkp_form" id="customHeaderSettingsForm" method="post" action="{url router=PKP\core\PKPApplication::ROUTE_COMPONENT op="manage" category="generic" plugin=$pluginName verb="settings" save=true}">
 	{csrf}
 	<p id="description">{translate key="plugins.generic.customHeader.manager.settings.description"}</p>
 	{include file="controllers/notification/inPlaceNotification.tpl" notificationId="customHeaderFormNotification"}
@@ -37,4 +37,3 @@
 
 	{fbvFormButtons}
 </form>
-

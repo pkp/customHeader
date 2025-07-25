@@ -12,11 +12,11 @@
 
 namespace APP\plugins\generic\customHeader;
 
-use APP\template\TemplateManager;
 use APP\core\Application;
 use Exception;
 use PKP\config\Config;
 use PKP\core\JSONMessage;
+use PKP\core\PKPApplication;
 use PKP\linkAction\LinkAction;
 use PKP\linkAction\request\AjaxModal;
 use PKP\plugins\GenericPlugin;
@@ -73,7 +73,7 @@ class CustomHeaderPlugin extends GenericPlugin
                 new LinkAction(
                     'settings',
                     new AjaxModal(
-                        $router->url($request, null, null, 'manage', null, array('verb' => 'settings', 'plugin' => $this->getName(), 'category' => 'generic')),
+                        $router->url($request, null, null, 'manage', null, ['verb' => 'settings', 'plugin' => $this->getName(), 'category' => 'generic']),
                         $this->getDisplayName()
                     ),
                     __('manager.plugins.settings'),
@@ -93,9 +93,10 @@ class CustomHeaderPlugin extends GenericPlugin
         switch ($request->getUserVar('verb')) {
             case 'settings':
                 $context = $request->getContext();
-
-                $templateMgr = TemplateManager::getManager($request);
-                $form = new CustomHeaderSettingsForm($this, $context ? $context->getId() : CONTEXT_ID_NONE);
+                $form = new CustomHeaderSettingsForm(
+                    $this,
+                    $context ? $context->getId() : PKPApplication::SITE_CONTEXT_ID
+                );
 
                 if ($request->getUserVar('save')) {
                     $form->readInputData();
@@ -121,8 +122,18 @@ class CustomHeaderPlugin extends GenericPlugin
             $templateMgr =& $params[0];
             $request = Application::get()->getRequest();
             $context = $request->getContext();
-            $templateMgr->addHeader('custom', $this->getSetting($context ? $context->getId() : CONTEXT_ID_NONE, 'content'));
-            $templateMgr->addHeader('custombackend', $this->getSetting($context ? $context->getId() : CONTEXT_ID_NONE, 'backendContent'), ['contexts' => ['backend']]);
+            $templateMgr->addHeader(
+                'custom',
+                $this->getSetting($context ? $context->getId() : PKPApplication::SITE_CONTEXT_ID, 'content')
+            );
+            $templateMgr->addHeader(
+                'custombackend',
+                $this->getSetting(
+                    $context ? $context->getId() : PKPApplication::SITE_CONTEXT_ID,
+                    'backendContent'
+                ),
+                ['contexts' => ['backend']]
+            );
         }
         return false;
     }
@@ -137,7 +148,7 @@ class CustomHeaderPlugin extends GenericPlugin
         $request = Application::get()->getRequest();
         $context = $request->getContext();
 
-        $output .= $this->getSetting($context ? $context->getId() : CONTEXT_ID_NONE, 'footerContent');
+        $output .= $this->getSetting($context ? $context->getId() : PKPApplication::SITE_CONTEXT_ID, 'footerContent');
 
         return false;
     }
