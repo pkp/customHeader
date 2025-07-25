@@ -17,6 +17,7 @@ use APP\core\Application;
 use APP\notification\NotificationManager;
 use APP\template\TemplateManager;
 use PKP\form\Form;
+use PKP\form\validation\FormValidator;
 use PKP\form\validation\FormValidatorCSRF;
 use PKP\form\validation\FormValidatorCustom;
 use PKP\form\validation\FormValidatorPost;
@@ -36,7 +37,7 @@ class CustomHeaderSettingsForm extends Form
 
         parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
 
-        $this->addCheck(new FormValidatorCustom($this, 'backendContent', FORM_VALIDATOR_OPTIONAL_VALUE, 'plugins.generic.customHeader.backendContent.error', function ($backendContent) {
+        $this->addCheck(new FormValidatorCustom($this, 'backendContent', FormValidator::FORM_VALIDATOR_OPTIONAL_VALUE, 'plugins.generic.customHeader.backendContent.error', function ($backendContent) {
             return $this->validateWellFormed($backendContent);
         }));
         $this->addCheck(new FormValidatorPost($this));
