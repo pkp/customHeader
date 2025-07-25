@@ -1,4 +1,4 @@
-on: [push]
+on: [push, pull_request]
 name: customHeader
 jobs:
   customHeader:
@@ -43,12 +43,12 @@ jobs:
           - application: ops
             php-version: 8.2
             database: pgsql
-
     name: customHeader
     steps:
       - uses: pkp/pkp-github-actions@v1
         with:
-         node_version: 20
-         branch: main
-         repository: pkp
-         plugin: true
+          node_version: 20
+          branch: main
+          repository: pkp
+          plugin: true
+          dataset_inject: true

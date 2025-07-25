@@ -3,8 +3,8 @@
 /**
  * @file CustomHeaderSettingsForm.php
  *
- * Copyright (c) 2013-2023 Simon Fraser University
- * Copyright (c) 2003-2023 John Willinsky
+ * Copyright (c) 2013-2025 Simon Fraser University
+ * Copyright (c) 2003-2025 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
  * @brief Form for managers to modify custom header plugin settings
@@ -12,91 +12,97 @@
 
 namespace APP\plugins\generic\customHeader;
 
-use PKP\form\Form;
+use DOMDocument;
 use APP\core\Application;
-use APP\template\TemplateManager;
 use APP\notification\NotificationManager;
+use APP\template\TemplateManager;
+use PKP\form\Form;
+use PKP\form\validation\FormValidator;
+use PKP\form\validation\FormValidatorCSRF;
+use PKP\form\validation\FormValidatorCustom;
+use PKP\form\validation\FormValidatorPost;
 
-class CustomHeaderSettingsForm extends Form {
+class CustomHeaderSettingsForm extends Form
+{
+    public int $contextId;
+    public CustomHeaderPlugin $plugin;
 
-	/** @var int */
-	var $_contextId;
+    /**
+     * Constructor
+     */
+    public function __construct(CustomHeaderPlugin $plugin, int $contextId)
+    {
+        $this->contextId = $contextId;
+        $this->plugin = $plugin;
 
-	/** @var object */
-	var $_plugin;
+        parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
 
-	/**
-	 * Constructor
-	 * @param $plugin CustomHeaderPlugin
-	 * @param $contextId int
-	 */
-	function __construct($plugin, $contextId) {
-		$this->_contextId = $contextId;
-		$this->_plugin = $plugin;
+        $this->addCheck(new FormValidatorCustom($this, 'backendContent', FormValidator::FORM_VALIDATOR_OPTIONAL_VALUE, 'plugins.generic.customHeader.backendContent.error', function ($backendContent) {
+            return $this->validateWellFormed($backendContent);
+        }));
+        $this->addCheck(new FormValidatorPost($this));
+        $this->addCheck(new FormValidatorCSRF($this));
+    }
 
-		parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
+    /**
+     * Initialize form data.
+     */
+    public function initData(): void
+    {
+        $this->_data = array(
+            'content' => $this->plugin->getSetting($this->contextId, 'content'),
+            'backendContent' => $this->plugin->getSetting($this->contextId, 'backendContent'),
+            'footerContent' => $this->plugin->getSetting($this->contextId, 'footerContent')
+        );
+    }
 
-		$this->addCheck(new \PKP\form\validation\FormValidatorCustom($this, 'backendContent', FORM_VALIDATOR_OPTIONAL_VALUE, 'plugins.generic.customHeader.backendContent.error', function ($backendContent) { return $this->validateWellFormed($backendContent); }));
-		$this->addCheck(new \PKP\form\validation\FormValidatorPost($this));
-		$this->addCheck(new \PKP\form\validation\FormValidatorCSRF($this));
-	}
+    /**
+     * Assign form data to user-submitted data.
+     */
+    public function readInputData(): void
+    {
+        $this->readUserVars(array('content', 'backendContent', 'footerContent'));
+    }
 
-	/**
-	 * Initialize form data.
-	 */
-	function initData() {
-		$this->_data = array(
-			'content' => $this->_plugin->getSetting($this->_contextId, 'content'),
-			'backendContent' => $this->_plugin->getSetting($this->_contextId, 'backendContent'),
-			'footerContent' => $this->_plugin->getSetting($this->_contextId, 'footerContent')
-		);
-	}
+    /**
+     * Fetch the form.
+     * @copydoc Form::fetch()
+     */
+    public function fetch($request, $template = null, $display = false): null|string
+    {
+        $templateMgr = TemplateManager::getManager($request);
+        $templateMgr->assign('pluginName', $this->plugin->getName());
+        return parent::fetch($request, $template, $display);
+    }
 
-	/**
-	 * Assign form data to user-submitted data.
-	 */
-	function readInputData() {
-		$this->readUserVars(array('content', 'backendContent', 'footerContent'));
-	}
+    /**
+     * Save settings.
+     */
+    public function execute(...$functionArgs)
+    {
+        parent::execute(...$functionArgs);
 
-	/**
-	 * Fetch the form.
-	 * @copydoc Form::fetch()
-	 */
-	function fetch($request, $template = null, $display = false) {
-		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->assign('pluginName', $this->_plugin->getName());
-		return parent::fetch($request, $template, $display);
-	}
+        $request = Application::get()->getRequest();
+        $this->plugin->updateSetting($this->contextId, 'content', $this->getData('content'), 'string');
+        $this->plugin->updateSetting($this->contextId, 'backendContent', $this->getData('backendContent'), 'string');
+        $this->plugin->updateSetting($this->contextId, 'footerContent', $this->getData('footerContent'), 'string');
+        $notificationManager = new NotificationManager();
+        $notificationManager->createTrivialNotification($request->getUser()->getId());
+    }
 
-	/**
-	 * Save settings.
-	 */
-	function execute(...$functionArgs) {
-		parent::execute(...$functionArgs);
-
-		$request = Application::get()->getRequest();
-		$this->_plugin->updateSetting($this->_contextId, 'content', $this->getData('content'), 'string');
-		$this->_plugin->updateSetting($this->_contextId, 'backendContent', $this->getData('backendContent'), 'string');
-		$this->_plugin->updateSetting($this->_contextId, 'footerContent', $this->getData('footerContent'), 'string');
-		$notificationManager = new NotificationManager();
-		$notificationManager->createTrivialNotification($request->getUser()->getId(), NOTIFICATION_TYPE_SUCCESS);
-	}
-
-	/**
-	 * Validate that the input is well-formed XML
-	 * We want to avoid breaking the whole HTML page with an unclosed HTML attribute quote or tag
-	 * @param $input string
-	 * @return boolean
-	 */
-	function validateWellFormed($input) {
-		$libxml_errors_setting = libxml_use_internal_errors();
-		libxml_use_internal_errors(true);
-		libxml_clear_errors();
-		$dom = new DOMDocument();
-		$dom->loadHTML($input);
-		$isWellFormed = count(libxml_get_errors())==0;
-		libxml_use_internal_errors($libxml_errors_setting);
-		return $isWellFormed;
-	}
+    /**
+     * Validate that the input is well-formed XML
+     * We want to avoid breaking the whole HTML page with an unclosed HTML attribute quote or tag
+     */
+    public function validateWellFormed(string $input): bool
+    {
+        $libxml_errors_setting = libxml_use_internal_errors();
+        libxml_use_internal_errors(true);
+        libxml_clear_errors();
+        $dom = new DOMDocument();
+        $dom->loadHTML($input);
+        $isWellFormed = count(libxml_get_errors()) == 0;
+        libxml_use_internal_errors($libxml_errors_setting);
+        return $isWellFormed;
+    }
 }
