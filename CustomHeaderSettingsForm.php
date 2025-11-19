@@ -24,13 +24,13 @@ use PKP\form\validation\FormValidatorPost;
 
 class CustomHeaderSettingsForm extends Form
 {
-    public int $contextId;
+    public ?int $contextId;
     public CustomHeaderPlugin $plugin;
 
     /**
      * Constructor
      */
-    public function __construct(CustomHeaderPlugin $plugin, int $contextId)
+    public function __construct(CustomHeaderPlugin $plugin, ?int $contextId)
     {
         $this->contextId = $contextId;
         $this->plugin = $plugin;
