@@ -124,11 +124,11 @@ class CustomHeaderPlugin extends GenericPlugin
             $context = $request->getContext();
             $templateMgr->addHeader(
                 'custom',
-                $this->getSetting($context ? $context->getId() : PKPApplication::SITE_CONTEXT_ID, 'content')
+                (string) $this->getSetting($context ? $context->getId() : PKPApplication::SITE_CONTEXT_ID, 'content')
             );
             $templateMgr->addHeader(
                 'custombackend',
-                $this->getSetting(
+                (string) $this->getSetting(
                     $context ? $context->getId() : PKPApplication::SITE_CONTEXT_ID,
                     'backendContent'
                 ),
