@@ -31,8 +31,7 @@ msgid "plugins.generic.customHeader.footerContent"
 msgstr "Footer-Inhalt"
 
 msgid "plugins.generic.customHeader.backendContent.error"
-msgstr ""
-"Header-Inhalt des redaktionellen Backends muss gültiges XHTML enthalten."
+msgstr "Header-Inhalt des redaktionellen Backends muss gültiges XHTML enthalten."
 
 msgid "plugins.generic.customHeader.backendContent"
 msgstr "Header-Inhalt des redaktionellen Backends"
